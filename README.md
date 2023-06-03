@@ -9,7 +9,7 @@ A local development setup or boilerplate for [Nest.js framework](https://nestjs.
 4. Clone the app:
 
 ```bash
-git clone git@github.com:imahmudul/nestjs-mongodb-multi.git
+git clone https://github.com/imahmudul/nestjs-mongodb-multi
 ```
 
 5. Install npm packages - _for IDE type checking_.
