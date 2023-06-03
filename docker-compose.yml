@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - db
+
+  source_db:
+    image: source_mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_SOURCE_USERNAME: root
+      MONGO_SOURCE_PASSWORD: password
+
+  target_db:
+    image: traget_mongo
+    restart: always
+    ports:
+      - 27017:27018
+    environment:
+      MONGO_TARGET_USERNAME: root
+      MONGO_TARGET_PASSWORD: password
